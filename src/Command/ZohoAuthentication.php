@@ -54,7 +54,7 @@ class ZohoAuthentication extends Command
         $protocol       = $this->choice('Select your protocol.', ['http', 'https'], 0);
         $redirect_route =  $protocol .'://'. rtrim($client_domain, '/') . '/oauth2back';
 
-        $redirect_url = 'https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.ALL,ZohoCRM.settings.ALL&client_id='.$client_id.'&response_type=code&access_type=offline&redirect_uri='.$redirect_route;
+        $redirect_url = 'https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.ALL&prompt=consent&client_id='.$client_id.'&response_type=code&access_type=offline&redirect_uri='.$redirect_route;
 
         $flight = ZohoOauthSetting::updateOrCreate(
             ['client_id' => $client_id],
