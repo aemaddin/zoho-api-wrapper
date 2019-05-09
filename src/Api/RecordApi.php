@@ -43,7 +43,7 @@ class RecordApi extends RestApi
         return $this->makeRequest($request);
     }
 
-    public function insert($module, array $param)
+    public function insert($module, array $param) : ZohoResponse
     {
         $request = $this->createRequest('insert', $module, $param);
         return $this->makeRequest($request);
