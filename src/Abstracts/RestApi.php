@@ -50,7 +50,7 @@ abstract class RestApi
      * 
      * @return ZohoApi response
      */
-    public function makeRequest(ZohoRequest $request)
+    public function makeRequest(ZohoRequest $request) : ZohoResponse
     {
         return $this->getZohoApi()->get($request);
     }
